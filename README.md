@@ -31,7 +31,7 @@ import { StyleCode } from "@mhesus/mcbe-colors";
 // -- Compounding styles --
 import { red, italic, aqua } from "@mhesus/mcbe-colors";
 
-// style codes are applied in the order they're called
+// style codes are applied in the order they're written
 red.bold("red bold") === "§c§lred bold§r";
 
 italic.red("italic red") === "§o§citalic red§r";
