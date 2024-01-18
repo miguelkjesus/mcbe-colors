@@ -1,0 +1,24 @@
+export * from "./StyleCode";
+export * from "./Style";
+
+import { Style } from "./Style";
+export const black = Style.black;
+export const darkBlue = Style.darkBlue;
+export const darkGreen = Style.darkGreen;
+export const darkAqua = Style.darkAqua;
+export const darkRed = Style.darkRed;
+export const darkPurple = Style.darkPurple;
+export const gold = Style.gold;
+export const gray = Style.gray;
+export const darkGray = Style.darkGray;
+export const blue = Style.blue;
+export const green = Style.green;
+export const aqua = Style.aqua;
+export const red = Style.red;
+export const lightPurple = Style.lightPurple;
+export const yellow = Style.yellow;
+export const white = Style.white;
+export const minecoinGold = Style.minecoinGold;
+export const obfuscated = Style.obfuscated;
+export const bold = Style.bold;
+export const italic = Style.italic;

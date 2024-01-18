@@ -1,0 +1,22 @@
+{
+  "name": "@mhesus/mcbe-commands",
+  "version": "1.0.3",
+  "description": "A library that implements a simple JSON-based database into minecraft bedrock utilising dynamic properties.",
+  "author": "Miguel Jesus",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepack": "npm ci && npm run build"
+  },
+  "devDependencies": {
+    "@minecraft/server": "^1.9.0-beta.1.20.60-preview.23",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.5",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  }
+}
