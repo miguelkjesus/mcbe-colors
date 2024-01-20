@@ -6,6 +6,10 @@
   "license": "ISC",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    "./auto": "./dist/string-extensions-auto.js",
+    "./extend": "./dist/string-extensions.js"
+  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "prepack": "npm ci && npm run build"
