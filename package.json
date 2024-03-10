@@ -6,15 +6,18 @@
   "license": "ISC",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "exports": {
-    "./auto": "./dist/string-extensions-auto.js",
-    "./extend": "./dist/string-extensions.js"
+    "./auto": "./dist/auto.js",
+    "./extend": "./dist/extend.js"
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
+    "build": "rimraf dist && tsc && npm run copy-dts",
     "prepack": "npm ci && npm run build"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   }
