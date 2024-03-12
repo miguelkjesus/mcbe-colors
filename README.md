@@ -6,7 +6,7 @@ A library that implements a simple text coloring system for use within the Minec
 
 ## Installation
 
-### Method 1: Bundler (RECOMMENDED + EASIEST)
+### Method 1: Bundler (HIGHLY RECOMMENDED)
 
 If you use a bundler to bundle your behaviour pack scripts, you can simply install this library through npm:
 
@@ -14,7 +14,7 @@ If you use a bundler to bundle your behaviour pack scripts, you can simply insta
 npm i @mhesus/mcbe-colors
 ```
 
-If you don't use a bundler, I would recommend learning to use one as it is the best and easiest way to use other people's libraries. Some official mojang libraries for addon making such as `@minecraft/math` require it. Personally, I use rollup after trying a few different bundlers, however you can use whatever works best for you.
+If you don't use a bundler, I would recommend learning to use one as it is the best and easiest way to use other people's libraries. Some official mojang libraries for addon making such as @minecraft/math require it. Personally, I use rollup after trying a few different bundlers, however you can use whatever works best for you.
 
 ### Method 2: No bundler and you use Javascript (Build yourself)
 
@@ -26,11 +26,17 @@ cd mcbe-colors
 npm run build
 ```
 
-You can then copy the `/build` folder into your project (Make sure to delete the `.d.ts` files) and rename it something suitable e.g. the name of this library.
+You can then copy the **/build** folder into your project (Make sure to delete the **.d.ts** files) and rename it something suitable e.g. the name of this library.
 
 ### Method 3: No Bundler and you use Typescript
 
-If you use typescript, when you clone the repository, all you need to do is copy the `/src` directory instead of the `/build` directory.
+If you use typescript, when you clone the repository:
+
+```
+git clone https://github.com/miguelkjesus/mcbe-colors
+```
+
+All you need to do is copy the **/src** directory into your project instead of the **/build** directory like with javascript.
 
 ## Usage
 
@@ -56,7 +62,7 @@ import { extend, unextend } from "@mhesus/mcbe-colors/extend";
 extend();
 
 // Works!!
-"Make this red!".red() === "§cMake this red!§r";
+"Make this blue!".blue() === "§cMake this blue!§r";
 
 // Remove the extensions created by the library
 unextend();
@@ -71,14 +77,14 @@ unextend();
 // -- Using the Style class --
 import { Style } from "@mhesus/mcbe-colors";
 
-Style.red("example") === "§cexample§r";
+Style.red("Make me red!") === "§cMake me red!§r";
 ```
 
 ```ts
 // -- Import the color directly --
 import { red } from "@mhesus/mcbe-colors";
 
-red("example") === "§cexample§r";
+red("Make me red!") === "§cMake me red!§r";
 ```
 
 ```ts
@@ -86,14 +92,18 @@ red("example") === "§cexample§r";
 import { red, italic, aqua } from "@mhesus/mcbe-colors";
 
 // Style codes are applied in the order they're called
-red.bold("red bold") === "§c§lred bold§r";
+red.bold("Red bold.") === "§c§lRed bold.§r";
 
-italic.red("italic red") === "§o§citalic red§r";
+italic.red("Italic red.") === "§o§cItalic red.§r";
 
 /* All the color codes created in the chain will be applied, 
    even if colors conflict. In game, the last color applied 
    will take effect. */
-aqua.green("green") === "§b§agreen§r";
+aqua.green("I will be green.") === "§b§aI will be green.§r";
+
+/* I wouldn't recommend compounding styles like this as then the
+   reset symbol at the end will be unnecessarily repeated. */
+aqua(green("I will be green.")) === "§b§aI will be green.§r§r";
 ```
 
 ### Method 3: Style Presets
