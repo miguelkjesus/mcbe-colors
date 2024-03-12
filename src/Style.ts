@@ -5,7 +5,7 @@ export interface Style {
 }
 
 export class Style {
-  styleCode: string;
+  private styleCode: string;
 
   get black() {
     return new Style(this.styleCode + StyleCode.black);
