@@ -4,23 +4,25 @@ A library that implements a simple text coloring system for use within the Minec
 
 [npm](https://www.npmjs.com/package/@mhesus/mcbe-colors) | [github](https://github.com/miguelkjesus/mcbe-colors)
 
-## Installation
+- [View the currently supported styles](style_codes.md)
 
-### Method 1: Bundler (HIGHLY RECOMMENDED)
+## Installation
 
 If you use a bundler to bundle your behaviour pack scripts, you can simply install this library through npm:
 
-```
+```plaintext
 npm i @mhesus/mcbe-colors
 ```
 
-If you don't use a bundler, I would recommend learning to use one as it is the best and easiest way to use other people's libraries. Some official mojang libraries for addon making such as @minecraft/math require it. Personally, I use rollup after trying a few different bundlers, however you can use whatever works best for you.
+If you don't use a bundler, I would recommend learning to use one as it is the best and easiest way to use other people's libraries. Some official mojang libraries, such as @minecraft/math, require it.
 
-### Method 2: No bundler and you use Javascript (Build yourself)
+- [A tutorial for ESBuild and Regolith](https://jaylydev.github.io/posts/bundle-minecraft-scripts-esbuild/)
+
+### Self-compilation
 
 Otherwise, you should copy the source files into your own project. If you use javascript, you should clone this repository and build it by executing the following in your terminal:
 
-```
+```plaintext
 git clone https://github.com/miguelkjesus/mcbe-colors
 cd mcbe-colors
 npm run build
@@ -28,32 +30,22 @@ npm run build
 
 You can then copy the **/build** folder into your project (Make sure to delete the **.d.ts** files) and rename it something suitable e.g. the name of this library.
 
-### Method 3: No Bundler and you use Typescript
-
-If you use typescript, when you clone the repository:
-
-```
-git clone https://github.com/miguelkjesus/mcbe-colors
-```
-
-All you need to do is copy the **/src** directory into your project instead of the **/build** directory like with javascript.
-
 ## Usage
 
-### Method 1: Extending the String Class
+### Extending the String Class
 
-In order to extend the string class, you can import the **/auto** export of this library which will automatically extend the class for you:
+In order to extend the string class, you can import the **/extend-auto** export of this library which will automatically extend the class for you:
 
 ```ts
-import "@mhesus/mcbe-colors/auto";
+import "@mhesus/mcbe-colors/extend-auto";
 
 "Make this red!".red() === "§cMake this red!§r";
-"Now gold and italicised!".gold.italic() === "§6§oNow gold and italicised!§r";
+"Now gold and italicised!".gold.italic() === "§p§oNow gold and italicised!§r";
 ```
 
 Preferrably you should put this import somewhere in your index file.
 
-Another way to extend the strinc class is importing the **/extend** export of this library and choose to extend/unextend the class whenever it is needed. This can prove useful in some niche situations, otherwise I would either not extend the class at all, or just use /auto.
+Another way to extend the string class is importing the **/extend** export of this library and choose to extend/unextend the class whenever it is needed. This can prove useful in some niche situations, otherwise I would either not extend the class at all, or just use /extend-auto.
 
 ```ts
 import { extend, unextend } from "@mhesus/mcbe-colors/extend";
@@ -71,7 +63,7 @@ unextend();
 "Make this blue!".blue();
 ```
 
-### Method 2: Functions
+### Styles
 
 ```ts
 // -- Using the Style class --
@@ -106,7 +98,7 @@ aqua.green("I will be green.") === "§b§aI will be green.§r";
 aqua(green("I will be green.")) === "§b§aI will be green.§r§r";
 ```
 
-### Method 3: Style Presets
+### Style Presets
 
 This isn't necessarily a distinct way of using the library, more is it a useful thing that you can do in addition to using the other methods.
 

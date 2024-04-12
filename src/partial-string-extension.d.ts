@@ -6,7 +6,7 @@ declare global {
     darkAqua?: StringExtensionStyle;
     darkRed?: StringExtensionStyle;
     darkPurple?: StringExtensionStyle;
-    gold?: StringExtensionStyle;
+    orange?: StringExtensionStyle;
     gray?: StringExtensionStyle;
     darkGray?: StringExtensionStyle;
     blue?: StringExtensionStyle;
@@ -16,11 +16,21 @@ declare global {
     lightPurple?: StringExtensionStyle;
     yellow?: StringExtensionStyle;
     white?: StringExtensionStyle;
-    minecoinGold?: StringExtensionStyle;
+    minecoin?: StringExtensionStyle;
+    quartz?: StringExtensionStyle;
+    iron?: StringExtensionStyle;
+    netherite?: StringExtensionStyle;
+    redstone?: StringExtensionStyle;
+    copper?: StringExtensionStyle;
+    gold?: StringExtensionStyle;
+    emerald?: StringExtensionStyle;
+    diamond?: StringExtensionStyle;
+    lapis?: StringExtensionStyle;
+    amethyst?: StringExtensionStyle;
     obfuscated?: StringExtensionStyle;
-    // @ts-ignore
     bold?: StringExtensionStyle;
     italic?: StringExtensionStyle;
+    reset?: StringExtensionStyle;
   }
 }
 

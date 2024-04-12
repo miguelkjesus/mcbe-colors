@@ -8,17 +8,21 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
-    "./auto": "./dist/auto.js",
+    "./extend-auto": "./dist/extend-auto.js",
     "./extend": "./dist/extend.js"
   },
   "scripts": {
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
     "build": "rimraf dist && tsc && npm run copy-dts",
-    "prepack": "npm ci && npm run build"
+    "prepack": "npm ci && npm run build",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "copyfiles": "^2.4.1",
+    "jest": "^29.7.0",
     "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.3.3"
   }
 }
