@@ -1,3 +1,6 @@
+/**
+ * Enum containing each Minecraft style code.
+ */
 export enum StyleCode {
   black = "§0",
   darkBlue = "§1",
@@ -5,7 +8,7 @@ export enum StyleCode {
   darkAqua = "§3",
   darkRed = "§4",
   darkPurple = "§5",
-  gold = "§6",
+  orange = "§6",
   gray = "§7",
   darkGray = "§8",
   blue = "§9",
@@ -15,7 +18,17 @@ export enum StyleCode {
   lightPurple = "§d",
   yellow = "§e",
   white = "§f",
-  minecoinGold = "§g",
+  minecoin = "§g",
+  quartz = "§h",
+  iron = "§i",
+  netherite = "§j",
+  redstone = "§m",
+  copper = "§n",
+  gold = "§p",
+  emerald = "§q",
+  diamond = "§s",
+  lapis = "§t",
+  amethyst = "§u",
 
   obfuscated = "§k",
   bold = "§l",

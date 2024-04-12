@@ -1,125 +1,207 @@
+import { Callable } from "./Callable";
 import { StyleCode } from "./StyleCode";
 
-export interface Style {
-  (text: string): string;
-}
+/**
+ * Represents a style for applying formatting to Minecraft text.
+ *
+ * @example
+ * ```ts
+ * import { red } from "@mhesus/mcbe-colors";
+ *
+ * red("Make me red!"); // "§cMake me red!§r"
+ *
+ * red.bold("Red and bold."); // "§c§lRed and bold.§r"
+ * ```
+ */
+export class Style extends Callable<(text: string) => string> {
+  /**
+   * The style code representing the formatting to be applied.
+   */
+  readonly styleCode: string;
 
-export class Style {
-  private styleCode: string;
+  /**
+   * Creates a new Style instance with the combined style codes of the current instance and the provided style code.
+   * @param styleCode - The style code to compound with the current instance's style code.
+   * @returns A new Style instance with the combined style codes.
+   */
+  protected createCompoundStyle(styleCode: string) {
+    return new Style(this.styleCode + styleCode);
+  }
+
+  /**
+   * Applies the style formatting to the provided string.
+   * @param text - The string to which the formatting will be applied.
+   * @returns The string with the applied formatting.
+   */
+  protected call(text: string) {
+    return this.styleCode + text + StyleCode.reset;
+  }
+
+  /**
+   * Creates a new Style instance with the specified style code.
+   * @param styleCode - The style code for the new Style instance.
+   */
+  constructor(styleCode: string) {
+    super();
+    this.styleCode = styleCode;
+  }
 
   get black() {
-    return new Style(this.styleCode + StyleCode.black);
+    return this.createCompoundStyle(StyleCode.black);
   }
 
   get darkBlue() {
-    return new Style(this.styleCode + StyleCode.darkBlue);
+    return this.createCompoundStyle(StyleCode.darkBlue);
   }
 
   get darkGreen() {
-    return new Style(this.styleCode + StyleCode.darkGreen);
+    return this.createCompoundStyle(StyleCode.darkGreen);
   }
 
   get darkAqua() {
-    return new Style(this.styleCode + StyleCode.darkAqua);
+    return this.createCompoundStyle(StyleCode.darkAqua);
   }
 
   get darkRed() {
-    return new Style(this.styleCode + StyleCode.darkRed);
+    return this.createCompoundStyle(StyleCode.darkRed);
   }
 
   get darkPurple() {
-    return new Style(this.styleCode + StyleCode.darkPurple);
+    return this.createCompoundStyle(StyleCode.darkPurple);
   }
 
-  get gold() {
-    return new Style(this.styleCode + StyleCode.gold);
+  get orange() {
+    return this.createCompoundStyle(StyleCode.orange);
   }
 
   get gray() {
-    return new Style(this.styleCode + StyleCode.gray);
+    return this.createCompoundStyle(StyleCode.gray);
   }
 
   get darkGray() {
-    return new Style(this.styleCode + StyleCode.darkGray);
+    return this.createCompoundStyle(StyleCode.darkGray);
   }
 
   get blue() {
-    return new Style(this.styleCode + StyleCode.blue);
+    return this.createCompoundStyle(StyleCode.blue);
   }
 
   get green() {
-    return new Style(this.styleCode + StyleCode.green);
+    return this.createCompoundStyle(StyleCode.green);
   }
 
   get aqua() {
-    return new Style(this.styleCode + StyleCode.aqua);
+    return this.createCompoundStyle(StyleCode.aqua);
   }
 
   get red() {
-    return new Style(this.styleCode + StyleCode.red);
+    return this.createCompoundStyle(StyleCode.red);
   }
 
   get lightPurple() {
-    return new Style(this.styleCode + StyleCode.lightPurple);
+    return this.createCompoundStyle(StyleCode.lightPurple);
   }
 
   get yellow() {
-    return new Style(this.styleCode + StyleCode.yellow);
+    return this.createCompoundStyle(StyleCode.yellow);
   }
 
   get white() {
-    return new Style(this.styleCode + StyleCode.white);
+    return this.createCompoundStyle(StyleCode.white);
   }
 
-  get minecoinGold() {
-    return new Style(this.styleCode + StyleCode.minecoinGold);
+  get minecoin() {
+    return this.createCompoundStyle(StyleCode.minecoin);
+  }
+
+  get quartz() {
+    return this.createCompoundStyle(StyleCode.quartz);
+  }
+
+  get iron() {
+    return this.createCompoundStyle(StyleCode.iron);
+  }
+
+  get netherite() {
+    return this.createCompoundStyle(StyleCode.netherite);
+  }
+
+  get redstone() {
+    return this.createCompoundStyle(StyleCode.redstone);
+  }
+
+  get copper() {
+    return this.createCompoundStyle(StyleCode.copper);
+  }
+
+  get gold() {
+    return this.createCompoundStyle(StyleCode.gold);
+  }
+
+  get emerald() {
+    return this.createCompoundStyle(StyleCode.emerald);
+  }
+
+  get diamond() {
+    return this.createCompoundStyle(StyleCode.diamond);
+  }
+
+  get lapis() {
+    return this.createCompoundStyle(StyleCode.lapis);
+  }
+
+  get amethyst() {
+    return this.createCompoundStyle(StyleCode.amethyst);
   }
 
   get obfuscated() {
-    return new Style(this.styleCode + StyleCode.obfuscated);
+    return this.createCompoundStyle(StyleCode.obfuscated);
   }
 
   get bold() {
-    return new Style(this.styleCode + StyleCode.bold);
+    return this.createCompoundStyle(StyleCode.bold);
   }
 
   get italic() {
-    return new Style(this.styleCode + StyleCode.italic);
+    return this.createCompoundStyle(StyleCode.italic);
   }
 
-  constructor(styleCode: string) {
-    this.styleCode = styleCode;
-
-    let apply = <Style>function (text: string): string {
-      return this.styleCode + text + StyleCode.reset;
-    };
-
-    apply.bind(this);
-    Object.assign(apply, this);
-    Object.setPrototypeOf(apply, Style.prototype);
-    return apply;
+  get reset() {
+    return this.createCompoundStyle(StyleCode.reset);
   }
 
-  static black = new Style(StyleCode.black);
-  static darkBlue = new Style(StyleCode.darkBlue);
-  static darkGreen = new Style(StyleCode.darkGreen);
-  static darkAqua = new Style(StyleCode.darkAqua);
-  static darkRed = new Style(StyleCode.darkRed);
-  static darkPurple = new Style(StyleCode.darkPurple);
-  static gold = new Style(StyleCode.gold);
-  static gray = new Style(StyleCode.gray);
-  static darkGray = new Style(StyleCode.darkGray);
-  static blue = new Style(StyleCode.blue);
-  static green = new Style(StyleCode.green);
-  static aqua = new Style(StyleCode.aqua);
-  static red = new Style(StyleCode.red);
-  static lightPurple = new Style(StyleCode.lightPurple);
-  static yellow = new Style(StyleCode.yellow);
-  static white = new Style(StyleCode.white);
-  static minecoinGold = new Style(StyleCode.minecoinGold);
-  static obfuscated = new Style(StyleCode.obfuscated);
-  static bold = new Style(StyleCode.bold);
-  static italic = new Style(StyleCode.italic);
+  static readonly black = new this(StyleCode.black);
+  static readonly darkBlue = new this(StyleCode.darkBlue);
+  static readonly darkGreen = new this(StyleCode.darkGreen);
+  static readonly darkAqua = new this(StyleCode.darkAqua);
+  static readonly darkRed = new this(StyleCode.darkRed);
+  static readonly darkPurple = new this(StyleCode.darkPurple);
+  static readonly orange = new this(StyleCode.orange);
+  static readonly gray = new this(StyleCode.gray);
+  static readonly darkGray = new this(StyleCode.darkGray);
+  static readonly blue = new this(StyleCode.blue);
+  static readonly green = new this(StyleCode.green);
+  static readonly aqua = new this(StyleCode.aqua);
+  static readonly red = new this(StyleCode.red);
+  static readonly lightPurple = new this(StyleCode.lightPurple);
+  static readonly yellow = new this(StyleCode.yellow);
+  static readonly white = new this(StyleCode.white);
+  static readonly minecoin = new this(StyleCode.minecoin);
+  static readonly quartz = new this(StyleCode.quartz);
+  static readonly iron = new this(StyleCode.iron);
+  static readonly netherite = new this(StyleCode.netherite);
+  static readonly redstone = new this(StyleCode.redstone);
+  static readonly copper = new this(StyleCode.copper);
+  static readonly gold = new this(StyleCode.gold);
+  static readonly emerald = new this(StyleCode.emerald);
+  static readonly diamond = new this(StyleCode.diamond);
+  static readonly lapis = new this(StyleCode.lapis);
+  static readonly amethyst = new this(StyleCode.amethyst);
+
+  static readonly obfuscated = new this(StyleCode.obfuscated);
+  static readonly bold = new this(StyleCode.bold);
+  static readonly italic = new this(StyleCode.italic);
+  static readonly reset = new this(StyleCode.reset);
 }
 
 export const black = Style.black;
@@ -128,7 +210,7 @@ export const darkGreen = Style.darkGreen;
 export const darkAqua = Style.darkAqua;
 export const darkRed = Style.darkRed;
 export const darkPurple = Style.darkPurple;
-export const gold = Style.gold;
+export const orange = Style.orange;
 export const gray = Style.gray;
 export const darkGray = Style.darkGray;
 export const blue = Style.blue;
@@ -138,7 +220,19 @@ export const red = Style.red;
 export const lightPurple = Style.lightPurple;
 export const yellow = Style.yellow;
 export const white = Style.white;
-export const minecoinGold = Style.minecoinGold;
+export const minecoin = Style.minecoin;
+export const quartz = Style.quartz;
+export const iron = Style.iron;
+export const netherite = Style.netherite;
+export const redstone = Style.redstone;
+export const copper = Style.copper;
+export const gold = Style.gold;
+export const emerald = Style.emerald;
+export const diamond = Style.diamond;
+export const lapis = Style.lapis;
+export const amethyst = Style.amethyst;
+
 export const obfuscated = Style.obfuscated;
 export const bold = Style.bold;
 export const italic = Style.italic;
+export const reset = Style.reset;
