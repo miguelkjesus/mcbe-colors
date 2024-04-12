@@ -5,6 +5,7 @@ A library that implements a simple text coloring system for use within the Minec
 [npm](https://www.npmjs.com/package/@mhesus/mcbe-colors) | [github](https://github.com/miguelkjesus/mcbe-colors)
 
 - [View the currently supported styles](style_codes.md)
+- [View the currently supported symbols](symbols.md)
 
 ## Installation
 
