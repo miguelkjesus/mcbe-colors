@@ -1,6 +1,6 @@
 # Supported Style Codes
 
-| Color      | Code | Image                                 |
+| Color      | Code | Example                               |
 | ---------- | ---- | ------------------------------------- |
 | black      | §0   | ![black](./media/black.png)           |
 | darkBlue   | §1   | ![darkBlue](./media/darkBlue.png)     |
