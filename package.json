@@ -4,12 +4,22 @@
   "description": "A library that implements a simple text coloring system for use within the Minecraft: Bedrock Edition script api.",
   "author": "Miguel Jesus",
   "license": "ISC",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
+  "types": "./dist",
+  "main": "./dist/index.js",
   "exports": {
-    "./extend-auto": "./dist/extend-auto.js",
-    "./extend": "./dist/extend.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./extend-auto": {
+      "types": "./dist/extend-auto.d.ts",
+      "default": "./dist/extend-auto.js"
+    },
+    "./extend": {
+      "types": "./dist/extend.d.ts",
+      "default": "./dist/extend.js"
+    }
   },
   "scripts": {
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",

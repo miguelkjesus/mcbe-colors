@@ -1,4 +1,4 @@
-import { extend } from "./extend-string";
-export type * from "./string-extension";
+import { extend } from "./extend-string.js";
+export type * from "./string-extension.d.ts";
 
 extend();

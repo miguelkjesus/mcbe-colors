@@ -1,35 +1,35 @@
 # Supported Style Codes
 
-| Style Name  | Style Code |
-| ----------- | ---------- |
-| black       | §0         |
-| darkBlue    | §1         |
-| darkGreen   | §2         |
-| darkAqua    | §3         |
-| darkRed     | §4         |
-| darkPurple  | §5         |
-| orange      | §6         |
-| gray        | §7         |
-| darkGray    | §8         |
-| blue        | §9         |
-| green       | §a         |
-| aqua        | §b         |
-| red         | §c         |
-| lightPurple | §d         |
-| yellow      | §e         |
-| white       | §f         |
-| minecoin    | §g         |
-| quartz      | §h         |
-| iron        | §i         |
-| netherite   | §j         |
-| redstone    | §m         |
-| copper      | §n         |
-| gold        | §p         |
-| emerald     | §q         |
-| diamond     | §s         |
-| lapis       | §t         |
-| amethyst    | §u         |
-| obfuscated  | §k         |
-| bold        | §l         |
-| italic      | §o         |
-| reset       | §r         |
+| Color      | Code | Image                                 |
+| ---------- | ---- | ------------------------------------- |
+| black      | §0   | ![black](./media/black.png)           |
+| darkBlue   | §1   | ![darkBlue](./media/darkBlue.png)     |
+| darkGreen  | §2   | ![darkGreen](./media/darkGreen.png)   |
+| darkAqua   | §3   | ![darkAqua](./media/darkAqua.png)     |
+| darkRed    | §4   | ![darkRed](./media/darkRed.png)       |
+| purple     | §5   | ![purple](./media/purple.png)         |
+| orange     | §6   | ![orange](./media/orange.png)         |
+| gray       | §7   | ![gray](./media/gray.png)             |
+| darkGray   | §8   | ![darkGray](./media/darkGray.png)     |
+| blue       | §9   | ![blue](./media/blue.png)             |
+| green      | §a   | ![green](./media/green.png)           |
+| aqua       | §b   | ![aqua](./media/aqua.png)             |
+| red        | §c   | ![red](./media/red.png)               |
+| pink       | §d   | ![pink](./media/pink.png)             |
+| yellow     | §e   | ![yellow](./media/yellow.png)         |
+| white      | §f   | ![white](./media/white.png)           |
+| minecoin   | §g   | ![minecoin](./media/minecoin.png)     |
+| quartz     | §h   | ![quartz](./media/quartz.png)         |
+| iron       | §i   | ![iron](./media/iron.png)             |
+| netherite  | §j   | ![netherite](./media/netherite.png)   |
+| redstone   | §m   | ![redstone](./media/redstone.png)     |
+| copper     | §n   | ![copper](./media/copper.png)         |
+| gold       | §p   | ![gold](./media/gold.png)             |
+| emerald    | §q   | ![emerald](./media/emerald.png)       |
+| diamond    | §s   | ![diamond](./media/diamond.png)       |
+| lapis      | §t   | ![lapis](./media/lapis.png)           |
+| amethyst   | §u   | ![amethyst](./media/amethyst.png)     |
+| obfuscated | §k   | ![obfuscated](./media/obfuscated.png) |
+| bold       | §l   | ![bold](./media/bold.png)             |
+| italic     | §o   | ![italic](./media/italic.png)         |
+| reset      | §r   |                                       |

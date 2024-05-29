@@ -1,5 +1,5 @@
-import { Style } from "./Style";
-import { StyleCode } from "./StyleCode";
+import { Style } from "./Style.js";
+import { StyleCode } from "./StyleCode.js";
 
 /**
  * Represents a string with known content but pending formatting.

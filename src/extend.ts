@@ -1,2 +1,2 @@
-export * from "./extend-string";
-export type * from "./partial-string-extension";
+export * from "./extend-string.js";
+export type * from "./partial-string-extension.d.ts";

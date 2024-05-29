@@ -1,5 +1,5 @@
-import { StyledString } from "./StyledString";
-import { StyleCode } from "./StyleCode";
+import { StyledString } from "./StyledString.js";
+import { StyleCode } from "./StyleCode.js";
 
 /**
  * Adds the styling methods to the String prototype.

@@ -5,7 +5,7 @@ declare global {
     darkGreen: StringExtensionStyle;
     darkAqua: StringExtensionStyle;
     darkRed: StringExtensionStyle;
-    darkPurple: StringExtensionStyle;
+    purple: StringExtensionStyle;
     orange: StringExtensionStyle;
     gray: StringExtensionStyle;
     darkGray: StringExtensionStyle;
@@ -13,7 +13,7 @@ declare global {
     green: StringExtensionStyle;
     aqua: StringExtensionStyle;
     red: StringExtensionStyle;
-    lightPurple: StringExtensionStyle;
+    pink: StringExtensionStyle;
     yellow: StringExtensionStyle;
     white: StringExtensionStyle;
     minecoin: StringExtensionStyle;

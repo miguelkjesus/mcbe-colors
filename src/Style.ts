@@ -1,5 +1,5 @@
-import { Callable } from "./Callable";
-import { StyleCode } from "./StyleCode";
+import { Callable } from "./Callable.js";
+import { StyleCode } from "./StyleCode.js";
 
 /**
  * Represents a style for applying formatting to Minecraft text.
@@ -66,8 +66,8 @@ export class Style extends Callable<(text: string) => string> {
     return this.createCompoundStyle(StyleCode.darkRed);
   }
 
-  get darkPurple() {
-    return this.createCompoundStyle(StyleCode.darkPurple);
+  get purple() {
+    return this.createCompoundStyle(StyleCode.purple);
   }
 
   get orange() {
@@ -98,8 +98,8 @@ export class Style extends Callable<(text: string) => string> {
     return this.createCompoundStyle(StyleCode.red);
   }
 
-  get lightPurple() {
-    return this.createCompoundStyle(StyleCode.lightPurple);
+  get pink() {
+    return this.createCompoundStyle(StyleCode.pink);
   }
 
   get yellow() {
@@ -175,7 +175,7 @@ export class Style extends Callable<(text: string) => string> {
   static readonly darkGreen = new this(StyleCode.darkGreen);
   static readonly darkAqua = new this(StyleCode.darkAqua);
   static readonly darkRed = new this(StyleCode.darkRed);
-  static readonly darkPurple = new this(StyleCode.darkPurple);
+  static readonly purple = new this(StyleCode.purple);
   static readonly orange = new this(StyleCode.orange);
   static readonly gray = new this(StyleCode.gray);
   static readonly darkGray = new this(StyleCode.darkGray);
@@ -183,7 +183,7 @@ export class Style extends Callable<(text: string) => string> {
   static readonly green = new this(StyleCode.green);
   static readonly aqua = new this(StyleCode.aqua);
   static readonly red = new this(StyleCode.red);
-  static readonly lightPurple = new this(StyleCode.lightPurple);
+  static readonly pink = new this(StyleCode.pink);
   static readonly yellow = new this(StyleCode.yellow);
   static readonly white = new this(StyleCode.white);
   static readonly minecoin = new this(StyleCode.minecoin);
@@ -209,7 +209,7 @@ export const darkBlue = Style.darkBlue;
 export const darkGreen = Style.darkGreen;
 export const darkAqua = Style.darkAqua;
 export const darkRed = Style.darkRed;
-export const darkPurple = Style.darkPurple;
+export const purple = Style.purple;
 export const orange = Style.orange;
 export const gray = Style.gray;
 export const darkGray = Style.darkGray;
@@ -217,7 +217,7 @@ export const blue = Style.blue;
 export const green = Style.green;
 export const aqua = Style.aqua;
 export const red = Style.red;
-export const lightPurple = Style.lightPurple;
+export const pink = Style.pink;
 export const yellow = Style.yellow;
 export const white = Style.white;
 export const minecoin = Style.minecoin;
