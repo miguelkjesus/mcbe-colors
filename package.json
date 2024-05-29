@@ -1,6 +1,6 @@
 {
   "name": "@mhesus/mcbe-colors",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A library that implements a simple text coloring system for use within the Minecraft: Bedrock Edition script api.",
   "author": "Miguel Jesus",
   "license": "ISC",
