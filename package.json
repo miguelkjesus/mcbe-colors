@@ -1,6 +1,6 @@
 {
   "name": "@mhesus/mcbe-colors",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A library that implements a simple text coloring system for use within the Minecraft: Bedrock Edition script api.",
   "author": "Miguel Jesus",
   "license": "ISC",
@@ -30,8 +30,7 @@
   "scripts": {
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
     "build": "rimraf dist && tsc && npm run copy-dts",
-    "prepack": "npm ci && npm run build",
-    "test": "jest"
+    "prepack": "npm ci && npm run build"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
