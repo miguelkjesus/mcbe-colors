@@ -24,7 +24,7 @@ export class StyledString extends Style {
    * @returns The styled text.
    */
   protected call() {
-    return this.styleCode + this.text + StyleCode.reset;
+    return this.insertStyleCode(this.text) + StyleCode.reset;
   }
 
   /**

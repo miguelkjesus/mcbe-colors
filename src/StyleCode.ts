@@ -29,6 +29,7 @@ export enum StyleCode {
   diamond = "§s",
   lapis = "§t",
   amethyst = "§u",
+  resin = "§v",
 
   obfuscated = "§k",
   bold = "§l",

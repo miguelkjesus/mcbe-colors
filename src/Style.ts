@@ -28,13 +28,19 @@ export class Style extends Callable<(text: string) => string> {
     return new Style(this.styleCode + styleCode);
   }
 
+  protected insertStyleCode(text: string) {
+    return (
+      this.styleCode + text.replace(/§r/g, (match) => match + this.styleCode)
+    );
+  }
+
   /**
    * Applies the style formatting to the provided string.
    * @param text - The string to which the formatting will be applied.
    * @returns The string with the applied formatting.
    */
   protected call(text: string) {
-    return this.styleCode + text + StyleCode.reset;
+    return this.insertStyleCode(text) + StyleCode.reset;
   }
 
   /**
